@@ -1,3 +1,5 @@
+https://www.interviewbit.com/problems/sum-of-all-submatrices/
+
 public class Solution {
     public int solve(int[][] A) {
         int n = A.length;
