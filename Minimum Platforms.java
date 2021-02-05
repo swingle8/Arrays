@@ -42,28 +42,29 @@ class Driver_class
 
 class Platform
 {
-    static int findPlatform(int arr[], int dep[], int n) {
-        int Maxplatforms = 0;
+    static int findPlatform(int arr[], int dep[], int n)
+    {
         Arrays.sort(arr);
         Arrays.sort(dep);
-        
-        int i = 0;
+        int i = 1;
         int j = 0;
-        int platforms = 0;
-        while (i < arr.length && j < dep.length) {
+        int max = 1;
+        int platforms = 1;
+        while (i < n && j < n) {
             if (arr[i] <= dep[j]) {
                 platforms++;
                 i++;
             }
             else {
-                j++;
                 platforms--;
+                j++;
             }
-            if (platforms > Maxplatforms)
-                Maxplatforms = platforms;
+            max = Math.max(max, platforms);
         }
         
-        return Maxplatforms;
+            
+        return max;
+        
     }
     
 }
